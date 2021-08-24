@@ -1,0 +1,288 @@
+using System;
+
+namespace _1st
+{
+    class Program
+    {
+        static void SampleMethod()
+        {
+            Console.WriteLine("This is sample method...");
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Program started");
+            SampleMethod();
+            Console.WriteLine("Program ended");
+        }
+    }
+}
+
+
+using System;
+
+namespace _1st
+{
+    class Program
+    {
+        static void Add(int x, int y) // formal arguments
+        {
+            int sum = x + y;
+            Console.WriteLine(sum);
+        }
+        static void Main(string[] args)
+        {
+            int num1 = 10, num2 = 20;
+            Add(num1, num2); // actual arguments
+            Add(20, 50);
+        }
+    }
+}
+
+using System;
+
+namespace _1st
+{
+    class Program
+    {
+        static int Add(int x, int y) 
+        {
+            int sum = x + y;
+            return sum;
+        }
+        static void Main(string[] args)
+        {
+            int num1 = 10, num2 = 20;
+            int result = Add(num1, num2);
+            Console.WriteLine(result);
+        }
+    }
+}
+
+using System;
+
+namespace _1st
+{
+    class Program
+    {
+        static char GetGrade()
+        {
+            float percentage = GetPercentage();
+            if (percentage >= 80)
+                return 'A';
+            else if (percentage >= 60)
+                return 'B';
+            else if (percentage >= 40)
+                return 'C';
+            else
+                return 'D';
+        }
+        static float GetPercentage()
+        {
+            float totalmarks = GetTotal();
+            float percentage = totalmarks * 100 / 300;
+            return percentage;
+        }
+        static float GetTotal()
+        {
+            Console.WriteLine("Enter Marks 1 : ");
+            float marks1 = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter Marks 2 : ");
+            float marks2 = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter Marks 3 : ");
+            float marks3 = float.Parse(Console.ReadLine());
+
+            float total = marks1 + marks2 + marks3;
+            return total;
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Grade : " + GetGrade());
+        }
+    }
+}
+
+using System;
+
+namespace _1st
+{
+    class Program
+    {
+        static void SampleMethod(int x)
+        {
+            Console.WriteLine("Initial value of formal parameter: " + x);
+            x = 100;
+            Console.WriteLine("Final value of formal parameter: " + x);
+        }
+        static void Main(string[] args)
+        {
+            int a = 10;
+            Console.WriteLine("Initial value of actual parameter : " + a);
+            SampleMethod(a);
+            Console.WriteLine("Final value of actual parameter : " + a);
+        }
+    }
+}
+
+============
+Initial value of actual parameter : 10
+Initial value of formal parameter: 10
+Final value of formal parameter: 100
+Final value of actual parameter : 10
+============
+
+
+using System;
+
+namespace _1st
+{
+    class Program
+    {
+        static void SampleMethod(ref int x)
+        {
+            Console.WriteLine("Initial value of formal parameter: " + x);
+            x = 100;
+            Console.WriteLine("Final value of formal parameter: " + x);
+        }
+        static void Main(string[] args)
+        {
+            int a = 10;
+            Console.WriteLine("Initial value of actual parameter : " + a);
+            SampleMethod(ref a);
+            Console.WriteLine("Final value of actual parameter : " + a);
+        }
+    }
+}
+
+============
+Initial value of actual parameter : 10
+Initial value of formal parameter: 10
+Final value of formal parameter: 100
+Final value of actual parameter : 100
+============
+
+using System;
+
+namespace _1st
+{
+    class Program
+    {
+        static void SampleMethod(out int x)
+        {
+            //Console.WriteLine("Initial value of formal parameter: " + x);
+            x = 100;
+            Console.WriteLine("Final value of formal parameter: " + x);
+        }
+        static void Main(string[] args)
+        {
+            int a = 10; // = 10;
+            //Console.WriteLine("Initial value of actual parameter : " + a);
+            SampleMethod(out a);
+            Console.WriteLine("Final value of actual parameter : " + a);
+        }
+    }
+}
+
+======
+Final value of formal parameter: 100
+Final value of actual parameter : 100
+======
+
+using System;
+
+namespace _1st
+{
+    class Program
+    {
+        static int Add(int num1, int num2, params int[] list)
+        {
+            int sum = num1 + num2;
+            foreach (int item in list)
+            {
+                sum += item;
+            }
+            return sum;
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Add(10, 20, 30, 40, 50));
+            Console.WriteLine(Add(10, 20));
+        }
+    }
+}
+
+
+====
+150
+30
+====
+
+using System;
+
+namespace _1st
+{
+    class Program
+    {
+        static float RectangleArea(float height, float width)
+        {
+            float area = height * width;
+            return area;
+        }
+        static void Main(string[] args)
+        {
+            float result = RectangleArea(width: 12, height: 10.5f);
+            Console.WriteLine(result);
+        }
+    }
+}
+
+===
+126
+===
+
+using System;
+
+namespace _1st
+{
+    class Program
+    {
+        static float RectangleArea(float height, float width = 10)
+        {
+            float area = height * width;
+            return area;
+        }
+        static void Main(string[] args)
+        {
+            float result = RectangleArea(height: 10.5f);
+            Console.WriteLine(result);
+        }
+    }
+}
+
+===
+105
+===
+
+using System;
+
+namespace _1st
+{
+    class Program
+    {
+        static float RectangleArea(float height, float width = 10)
+        {
+            float area = height * width;
+            return area;
+        }
+        static void Main(string[] args)
+        {
+            float result = RectangleArea(height: 10.5f, width : 20);
+            Console.WriteLine(result);
+        }
+    }
+}
+
+===
+210
+===
