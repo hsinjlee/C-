@@ -1,0 +1,160 @@
+using System;
+
+namespace _1st
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string fname, lname;
+            fname = "George";
+            lname = "Johnson";
+
+            string fullname = String.Concat(fname, " ", lname);
+            Console.WriteLine("Full Name : {0}", fullname);
+
+            //by using string constructor
+            char[] letters = { 'H', 'e', 'l', 'l', 'o' };
+            string greetings = new string(letters);
+            Console.WriteLine("Greetings : {0}", greetings);
+            char[] ch = greetings.ToCharArray();
+            Console.WriteLine(ch);
+
+            //methods returning string
+            string[] sarray = { "Hello", "From", "The", "Earth" };
+            string message = String.Join(" ", sarray);
+            Console.WriteLine("Message : {0}", message);
+
+            //formatting method to convert a value
+            DateTime waiting = new DateTime(2022, 12, 31, 00, 00, 1);
+            string chat = String.Format("Message sent at {0:t} on {0:D}", waiting);
+            Console.WriteLine("Message: {0}", chat);
+
+        }
+    }
+}
+
+======
+Full Name : George Johnson
+Greetings : Hello
+Hello
+Message : Hello From The Earth
+Message: Message sent at 12:00 AM on Saturday, December 31, 2022
+======
+
+using System;
+
+namespace _1st
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string str = "Harvard University!";
+            string lower = str.ToLower();
+            string upper = str.ToUpper();
+            Console.WriteLine(lower);
+            Console.WriteLine(upper);
+        }
+    }
+}
+
+===
+harvard university!
+HARVARD UNIVERSITY!
+===
+
+using System;
+
+namespace _1st
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string str = "Harvard University!";
+            Console.WriteLine(str.StartsWith("Ha"));
+            Console.WriteLine(str.EndsWith("ity!"));
+        }
+    }
+}
+
+===
+True
+True
+===
+
+using System;
+
+namespace _1st
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string str = "Harvard University!";
+            Console.WriteLine(str.Contains("University!"));
+        }
+    }
+}
+
+==
+True
+==
+
+using System;
+
+namespace _1st
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string str = "Harvard University!";
+            string upper = str.ToUpper();
+            Console.WriteLine(str.Equals(upper, StringComparison.CurrentCultureIgnoreCase));
+        }
+    }
+}
+
+==
+True
+==
+
+using System;
+
+namespace _1st
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string str = "Harvard University!";
+            
+            Console.WriteLine(str.IndexOf("va", StringComparison.CurrentCultureIgnoreCase));
+        }
+    }
+}
+
+==
+3
+==
+
+using System;
+
+namespace _1st
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string str = "Harvard University!";
+            
+            Console.WriteLine(str.Length);
+        }
+    }
+}
+
+==
+19
+==
