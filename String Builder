@@ -1,0 +1,22 @@
+using System;
+using System.Text;
+
+namespace _1st
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string str = "Harvard ";
+            StringBuilder sb = new StringBuilder(str);
+            sb.Append("University!!!");
+            
+            Console.WriteLine(sb);
+        }
+    }
+}
+
+
+===
+Harvard University!!!
+===
