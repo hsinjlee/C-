@@ -1,0 +1,49 @@
+using System;
+
+namespace Test
+{
+    class Test
+    {
+        int marks; 
+        static int maxmarks;
+        Test()
+        {
+            this.marks = 30;
+        }
+        Test(int marks)
+        {
+            this.marks = marks;
+        }
+        Test (Test t)
+        {
+            this.marks = t.marks;
+        }
+        static Test()
+        {
+            Test.maxmarks = 50;
+        }
+        void CalculatePercent()
+        {
+            int percent = this.marks * 100 / Test.maxmarks;
+            Console.WriteLine(percent);
+        }
+        static void Main(string[] args)
+        {
+            Test t1 = new Test();
+            t1.CalculatePercent();
+
+            Test t2 = new Test(35);
+            t2.CalculatePercent();
+
+            Test t3 = new Test(t2);
+            t3.CalculatePercent();
+        }
+    }
+}
+
+
+===
+60
+70
+70
+===
