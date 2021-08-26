@@ -1,0 +1,25 @@
+using System;
+
+namespace Test
+{
+    class Person
+    {
+        int age;
+        string name;
+        char gender;
+        static void Main(string[] args)
+        {
+            Person p1 = new Person { name = "Johnson", gender = 'M', age = 30 };
+            Console.WriteLine(p1.name);
+            Console.WriteLine(p1.gender);
+            Console.WriteLine(p1.age);
+        }
+    }
+}
+
+
+===
+Johnson
+M
+30
+===
