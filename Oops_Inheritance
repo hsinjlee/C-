@@ -1,0 +1,60 @@
+using System;
+
+namespace Test
+{
+    class MyClass1
+    {
+        protected int a;
+        internal int b;
+        public MyClass1()
+        {
+            Console.WriteLine("MyClass1 Default Constructor");
+        }
+        public MyClass1(int a)
+        {
+            Console.WriteLine("MyClass1 Parameterized Constructor");
+        }
+        static MyClass1()
+        {
+            Console.WriteLine("MyClass1 static Constructor");
+        }
+        public void Method1()
+        {   
+            Console.WriteLine("Method1 from MyClass1");
+        }
+    }
+    class MyClass2 : MyClass1
+    {
+        public MyClass2()
+        {
+            Console.WriteLine("MyClass2 Default Constructor");
+        }
+        public MyClass2(int b) : base(b)
+        {
+            Console.WriteLine("MyClass2 Parameterized Constructor");
+        }
+        static MyClass2()
+        {
+            Console.WriteLine("MyClass2 static Constructor");
+        }
+        public void Method2()
+        {
+            Console.WriteLine("Method2 from MyClass2");
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            MyClass2 obj3 = new MyClass2(10);
+        }
+    }
+}
+
+===
+MyClass2 static Constructor
+MyClass1 static Constructor
+MyClass1 Parameterized Constructor
+MyClass2 Parameterized Constructor
+===
