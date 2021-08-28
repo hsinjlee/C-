@@ -1,0 +1,23 @@
+using System;
+
+namespace Test
+{
+    class MyClass<T1, T2>
+    {
+        public T1 MyProperty { get; set; }
+        public void Method(T1 p1, T2 p2)
+        {
+
+        }
+    }
+
+    class Person
+    {
+        static void Main(string[] args)
+        {
+            MyClass <int, string> obj1 = new MyClass<int, string>();
+            obj1.MyProperty = 10;
+            obj1.Method(10, "George");
+        }
+    }
+}
