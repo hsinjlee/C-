@@ -1,0 +1,32 @@
+using System;
+
+namespace Test
+{
+    enum Gender
+    {
+        Female = 0,
+        Male = 1,
+        Unknown = 2
+    }
+    class Person
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+        public Gender Gender { get; set; }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Person p1 = new Person { Name = "Johnson", Age = 29, Gender = Gender.Male };
+            int gen = (int)p1.Gender;
+            Console.WriteLine(gen);
+        }
+    }
+}
+
+
+
+===
+1
+===
