@@ -1,0 +1,33 @@
+using System;
+
+namespace Test
+{
+    struct MyStruct
+    {
+        public int Val { get; set; }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            MyStruct mystruct1 = new MyStruct();
+            mystruct1.Val = 10;
+
+            Console.WriteLine(mystruct1.Val);
+            MyStruct mystruct2 = mystruct1;
+
+            Console.WriteLine(mystruct2.Val);
+
+            mystruct1.Val = 20;
+
+            Console.WriteLine(mystruct2.Val);
+        }
+    }
+}
+
+
+===
+10
+10
+10
+===
