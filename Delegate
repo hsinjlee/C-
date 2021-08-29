@@ -31,3 +31,63 @@ namespace Test
 40
 300
 ===
+
+using System;
+
+namespace Test
+{
+    delegate int MyDel(int x, int y);
+    class Program
+    {
+        public static int Add(int x, int y)
+        {
+            return x + y;
+        }
+        public static int Multiply(int x, int y)
+        {
+            return x * y;
+        }
+        static void Main(string[] args)
+        {
+            MyDel del = new MyDel(Add);
+            del += Multiply;
+            int result = del(10, 30);
+            Console.WriteLine(result);
+        }
+    }
+}
+
+
+===
+300
+===
+
+using System;
+
+namespace Test
+{
+    delegate void MyDel(int x, int y);
+    class Program
+    {
+        public static void Add(int x, int y)
+        {
+            Console.WriteLine(x + y);
+        }
+        public static void Multiply(int x, int y)
+        {
+            Console.WriteLine(x * y);
+        }
+        static void Main(string[] args)
+        {
+            MyDel del = Add;
+            del += Multiply;
+            del(30, 50);
+        }
+    }
+}
+
+
+===
+80
+1500
+===
