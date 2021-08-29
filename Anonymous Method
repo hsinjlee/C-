@@ -1,0 +1,17 @@
+using System;
+
+namespace Test
+{
+    delegate int Del(int x);
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Del del = delegate (int x)
+            {
+                Console.WriteLine("This is anonymous method");
+                return 0;
+            };   
+        }
+    }
+}
