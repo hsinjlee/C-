@@ -1,0 +1,40 @@
+using System;
+
+namespace Test
+{
+    
+    class Program
+    {
+        public static void SampleMethod(string name)
+        {
+            Console.WriteLine("Welcome "+ name);
+        }
+        public static int Add(int x, int y)
+        {
+            
+            return x + y;
+        }
+        public static bool Login(string uid)
+        {
+            if (uid == "george")
+                
+                return true;
+            else
+                
+                return false;
+        }
+        static void Main(string[] args)
+        {
+            Action<string> action1 = SampleMethod;
+            Func<int, int, int> func1 = Add;
+            Predicate<string> pred1 = Login;
+
+            action1("Generic Delegage");
+        }
+    }
+}
+
+
+===
+Welcome Generic Delegage
+===
