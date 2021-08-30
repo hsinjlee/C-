@@ -1,0 +1,62 @@
+using System;
+
+namespace Test
+{
+    delegate int Del(int x);
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Del del = x => x * x;
+            int result = del(6);
+            Console.WriteLine(result);
+        }
+    }
+}
+===
+36
+===
+
+using System;
+
+namespace Test
+{
+    delegate int Del(int x, int y);
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Del del = (x, y) => x * y;
+            int result = del(4, 6);
+            Console.WriteLine(result);
+        }
+    }
+}
+===
+24
+===
+
+using System;
+
+namespace Test
+{
+    delegate void Del(int x, int y);
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Del del = (x, y) =>
+            {
+                Console.WriteLine(x * y);
+                Console.WriteLine("Program ended...");
+            };
+            del(4, 6);
+            
+        }
+    }
+}
+
+===
+24
+Program ended...
+===
