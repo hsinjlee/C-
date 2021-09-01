@@ -1,0 +1,181 @@
+using System;
+using System.Threading;
+
+namespace Test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Thread thread1 = new Thread(new ThreadStart(Method));
+            thread1.Start();
+            Console.WriteLine("Program Ended...");
+        }
+        static void Method()
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine("i : " + i);
+            }
+        }
+    }
+}
+
+===
+i : 1
+i : 2
+i : 3
+Program Ended...
+i : 4
+i : 5
+i : 6
+i : 7
+i : 8
+i : 9
+i : 10
+===
+
+using System;
+using System.Threading;
+
+namespace Test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Thread thread1 = new Thread(new ThreadStart(Method));
+            thread1.Start();
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine("Main : "+ i);
+            }
+            
+        }
+        static void Method()
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine("i : " + i);
+            }
+        }
+    }
+}
+
+
+
+===
+i : 1
+i : 2
+i : 3
+i : 4
+i : 5
+i : 6
+i : 7
+i : 8
+Main : 1
+i : 9
+i : 10
+Main : 2
+Main : 3
+Main : 4
+Main : 5
+Main : 6
+Main : 7
+Main : 8
+Main : 9
+Main : 10
+===
+
+using System;
+using System.Threading;
+
+namespace Test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Thread thread1 = new Thread(new ThreadStart(Method1));
+            Thread thread2 = new Thread(new ThreadStart(Method2));
+            thread1.Start();
+            thread2.Start();
+            
+            
+        }
+        static void Method1()
+        {
+            for (int i = 1; ; i++)
+            {
+                Console.WriteLine("Method1 : " + i);
+            }
+        }
+        static void Method2()
+        {
+            for (int i = 1; ; i++)
+            {
+                Console.WriteLine("Method2 : " + i);
+            }
+        }
+    }
+}
+
+using System;
+using System.Threading;
+
+namespace Test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Thread thread1 = new Thread(new ThreadStart(Method1));
+            Thread thread2 = new Thread(new ThreadStart(Method2));
+            thread1.Start();
+            thread2.Start();
+            
+            
+        }
+        static void Method1()
+        {
+            for (int i = 1;i <= 10 ; i++)
+            {
+                if (i == 5)
+                    Thread.Sleep(10000);
+
+                Console.WriteLine("Method1 : " + i);
+            }
+        }
+        static void Method2()
+        {
+            for (int i = 1; i <= 10  ; i++)
+            {
+                Console.WriteLine("Method2 : " + i);
+            }
+        }
+    }
+}
+
+
+===
+Method2 : 1
+Method2 : 2
+Method2 : 3
+Method2 : 4
+Method2 : 5
+Method1 : 1
+Method1 : 2
+Method1 : 3
+Method1 : 4
+Method2 : 6
+Method2 : 7
+Method2 : 8
+Method2 : 9
+Method2 : 10
+Method1 : 5
+Method1 : 6
+Method1 : 7
+Method1 : 8
+Method1 : 9
+Method1 : 10
+===
