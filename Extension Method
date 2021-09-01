@@ -1,0 +1,46 @@
+using System;
+
+namespace Test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int num1 = 112233;
+            int result = num1.GetDigits();
+            Console.WriteLine("Digits: " + result);
+        }
+    }
+}
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Test
+{
+    static class Class1
+    {
+        public static int GetDigits(this int num)
+        {
+            int count = 0;
+            while (num != 0)
+            {
+                count++;
+                num = num / 10;
+            }
+            return count;
+        }
+    }
+}
+
+
+
+===
+Digits: 6
+===
