@@ -1,0 +1,172 @@
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      int myNum = 5;               // integer (whole number)
+      double myDoubleNum = 5.99D;  // floating point number
+      char myLetter = 'D';         // character
+      bool myBool = true;          // boolean
+      string myText = "Hello";     // string
+      Console.WriteLine(myNum);
+      Console.WriteLine(myDoubleNum);
+      Console.WriteLine(myLetter);
+      Console.WriteLine(myBool);
+      Console.WriteLine(myText);
+    }
+  }
+}
+
+===
+5
+5.99
+D
+true
+Hello
+===
+
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      int myNum = 100000;
+      Console.WriteLine(myNum);
+    }
+  }
+}
+===
+100000
+===
+
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      long myNum = 15000000000L;
+      Console.WriteLine(myNum);
+    }
+  }
+}
+===
+15000000000
+===
+
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      float myNum = 5.75F;
+      Console.WriteLine(myNum);
+    }
+  }
+}
+===
+5.75
+===
+
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      double myNum = 19.99D;
+      Console.WriteLine(myNum);
+    }
+  }
+}
+===
+19.99
+===
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      float f1 = 35e3F;
+      double d1 = 12E4D;
+      Console.WriteLine(f1);
+      Console.WriteLine(d1);
+    }
+  }
+}
+
+===
+35000
+120000
+===
+
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      bool isCSharpFun = true;
+      bool isFishTasty = false;
+      Console.WriteLine(isCSharpFun);   // Outputs True
+      Console.WriteLine(isFishTasty);   // Outputs False    
+    }
+  }
+}
+===
+True
+False
+===
+
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      char myGrade = 'B';
+      Console.WriteLine(myGrade);
+    }
+  }
+}
+===
+B
+===
+
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string greeting = "Hello World";
+      Console.WriteLine(greeting);
+    }
+  }
+}
+===
+Hello World
+===
+
