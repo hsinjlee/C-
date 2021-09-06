@@ -1,0 +1,82 @@
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Console.WriteLine(Math.Max(5, 10));  
+     }
+  }
+}
+
+==
+10
+==
+
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Console.WriteLine(Math.Min(5, 10));  
+     }
+  }
+}
+
+==
+5
+==
+
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Console.WriteLine(Math.Sqrt(64));  
+     }
+  }
+}
+==
+8
+==
+
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Console.WriteLine(Math.Abs(-4.7));  
+     }
+  }
+}
+==
+4.7
+==
+
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Console.WriteLine(Math.Round(9.99));
+     }
+  }
+}
+==
+10
+==
+
