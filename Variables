@@ -1,0 +1,178 @@
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string name = "John";
+      Console.WriteLine(name);  
+     }
+  }
+}
+===
+John
+===
+
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      int myNum = 15;
+      Console.WriteLine(myNum);
+     }
+  }
+}
+===
+15
+===
+
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      int myNum;
+      myNum = 15;
+      Console.WriteLine(myNum);
+     }
+  }
+}
+
+===
+15
+===
+
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      int myNum = 15;
+      myNum = 20;
+      Console.WriteLine(myNum);
+    }
+  }
+}
+===
+20
+===
+
+const int myNum = 15;
+myNum = 20; // error
+
+int myNum = 5;
+double myDoubleNum = 5.99D;
+char myLetter = 'D';
+bool myBool = true;
+string myText = "Hello";
+
+
+
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string name = "John";
+      Console.WriteLine("Hello " + name);
+    }
+  }
+}
+
+===
+Hello John
+===
+
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string firstName = "John ";
+      string lastName = "Doe";
+      string fullName = firstName + lastName;
+      Console.WriteLine(fullName);
+    }
+  }
+}
+===
+John Doe
+===
+
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      int x = 5;
+      int y = 6;
+      Console.WriteLine(x + y);
+    }
+  }
+}
+===
+11
+===
+
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      int x = 5, y = 6, z = 50;
+      Console.WriteLine(x + y + z);
+    }
+  }
+}
+===
+61
+===
+
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      // Good
+      int minutesPerHour = 60;
+
+      // OK, but not so easy to understand what m actually is
+      int m = 60;
+      
+      Console.WriteLine(minutesPerHour);
+      Console.WriteLine(m);
+    }
+  }
+}
+===
+60
+60
+===
+
