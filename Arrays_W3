@@ -1,0 +1,180 @@
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+      Console.WriteLine(cars[0]);
+    }
+  }
+}
+==
+Volvo
+==
+
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+      cars[0] = "Opel";
+      Console.WriteLine(cars[0]);    
+    }
+  }
+}
+==
+Opel
+==
+
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+      Console.WriteLine(cars.Length);
+    }
+  }
+}
+==
+4
+==
+
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+      for (int i = 0; i < cars.Length; i++) 
+      {
+        Console.WriteLine(cars[i]);
+      }
+    }
+  }
+}
+==
+Volvo
+BMW
+Ford
+Mazda
+==
+
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+      foreach (string i in cars) 
+      {
+        Console.WriteLine(i);
+      }   
+    }
+  }
+}
+==
+Volvo
+BMW
+Ford
+Mazda
+==
+
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      // Sort a string
+      string[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+      Array.Sort(cars);
+      foreach (string i in cars)
+      {
+        Console.WriteLine(i);
+      }    
+      
+      // Sort an int
+      int[] myNumbers = {5, 1, 8, 9};
+      Array.Sort(myNumbers);
+      foreach (int i in myNumbers)
+      {
+        Console.WriteLine(i);
+      }
+    }
+  }
+}
+==
+BMW
+Ford
+Mazda
+Volvo
+1
+5
+8
+9
+==
+
+using System;
+using System.Linq;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      int[] myNumbers = {5, 1, 8, 9};
+      Console.WriteLine(myNumbers.Max());  // largest value
+      Console.WriteLine(myNumbers.Min());  // smallest value
+      Console.WriteLine(myNumbers.Sum());  // sum of myNumbers
+    }
+  }
+}
+==
+9
+1
+23
+==
+
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      // Declare an array
+      string[] cars;
+
+      // Add values, using new
+      cars = new string[] {"Volvo", "BMW", "Ford"};
+
+      // This would cause an error: cars = {"Volvo", "BMW", "Ford"};
+
+      Console.WriteLine(cars[0]);
+    }
+  }
+}
+==
+Volvo
+==
