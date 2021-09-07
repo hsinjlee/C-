@@ -1,0 +1,74 @@
+using System;
+
+namespace MyApplication
+{
+  class Car
+  {
+    private string model = "Mustang";
+
+    static void Main(string[] args)
+    {
+      Car myObj = new Car();
+      Console.WriteLine(myObj.model);
+    }
+  }
+}
+==
+Mustang
+==
+
+using System;
+
+namespace MyApplication
+{
+  class Car
+  {
+    private string model = "Mustang";
+  }
+}
+
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Car myObj = new Car();
+      Console.WriteLine(myObj.model);
+    }
+  }
+}
+==
+'Car.model' is inaccessible due to its protection level
+The field 'Car.model' is assigned but its value is never used
+==
+
+using System;
+
+namespace MyApplication
+{
+  class Car
+  {
+    public string model = "Mustang";
+  }
+}
+
+using System;
+
+namespace MyApplication
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Car myObj = new Car();
+      Console.WriteLine(myObj.model);
+    }
+  }
+}
+==
+Mustang
+==
+
